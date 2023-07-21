@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const CreateBook = ({ onCreate }) => {
+const BookCreate = ({ onCreate }) => {
   const [title, setTitle] = useState("");
 
   const handleSubmit = (e) => {
@@ -26,4 +26,4 @@ const CreateBook = ({ onCreate }) => {
   );
 };
 
-export default CreateBook;
+export default BookCreate;

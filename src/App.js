@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CreateBook from "./components/CreateBook";
+import BookCreate from "./components/BookCreate";
 import BookList from "./components/BookList";
 
 const App = () => {
@@ -14,10 +14,21 @@ const App = () => {
     setBooks(new_books);
   };
 
+  const editBook = (id, title) => {
+    const editedBooks = books.map((book) => {
+      if (book.id === id) {
+        return { ...book, title };
+      }
+      return book;
+    });
+
+    setBooks(editedBooks);
+  };
+
   return (
     <div className="app">
-      <BookList books={books} onDelete={deleteBook} />
-      <CreateBook onCreate={createBook} />
+      <BookList books={books} onDelete={deleteBook} onEdit={editBook} />
+      <BookCreate onCreate={createBook} />
     </div>
   );
 };
