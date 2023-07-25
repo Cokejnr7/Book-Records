@@ -1,9 +1,9 @@
-import { useState, useContext } from "react";
-import BookContext from "../context/book";
+import { useState } from "react";
+import useBookContext from "../hook/useBookContext";
 
 const BookCreate = () => {
   const [title, setTitle] = useState("");
-  const { createBook } = useContext(BookContext);
+  const { createBook } = useBookContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
